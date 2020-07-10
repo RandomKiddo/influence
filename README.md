@@ -302,8 +302,6 @@ f.__int__() / int(f)
 #returns the int value of the fractions
 f.__str__() / str(f)
 #returns the fraction as a string
-f.to_mixed_number(self)
-#returns f as a mixed number
 ```
 
 Compare:
@@ -316,6 +314,21 @@ f1 <= f2
 f1 == f2
 f1 > f2
 f1 >= f2
+```
+
+Operators:
+```py
+f1 = Fraction(1, 2)
+f2 = Fraction(3, 4)
+#fraction allows for
+f1 + f2
+f1 - f2
+f1 * f2
+f1 / f2
+f1 += f2
+f1 -= f2
+f1 *= f2
+f1 /= f2
 ```
 
 ###### MixedNum Class
@@ -354,12 +367,27 @@ Compare:
 ```py
 m1 = MixedNumber(1, 2, 3)
 m2 = MixedNumber(4, 5, 6)
-#fraction allows for
+#mixed number allows for
 m1 < m2
 m1 <= m2
 m1 == m2
 m1 > m2
 m1 >= m2
+```
+
+Operators:
+```py
+m1 = MixedNumber(1, 2, 3)
+m2 = MixedNumber(4, 5, 6)
+#mixed number allows for
+m1 + m2
+m1 - m2
+m1 * m2
+m1 / m2
+m1 += m2
+m1 -= m2
+m1 *= m2
+m1 /= m2
 ```
 
 ###### Grapher Subpackage
