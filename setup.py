@@ -4,6 +4,9 @@ md = []
 with open('/Users/SchoolOfficial/Desktop/influence/README.rst', 'r') as f:
     for line in f:
         md.append(str(line))
+ld = ''
+for i in md:
+    ld += i + "\n"
 
 setup(
   name = 'influence',         # How you named your package folder (MyLib)
@@ -11,7 +14,7 @@ setup(
   version = '0.3',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'A utility package for python containing two sub-packages that 1. extend python, and 2. add to python',   # Give a short description about your library
-  long_description = md,
+  long_description = ld,
   author = 'Neil',                   # Type in your name
   author_email = 'nghugare2@outlook.com',      # Type in your E-Mail
   url = 'https://github.com/RandomKiddo/influence',   # Provide either the link to your github or to your website
