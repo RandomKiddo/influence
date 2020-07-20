@@ -1,1 +1,1 @@
-from .printer import Printer
+import printer

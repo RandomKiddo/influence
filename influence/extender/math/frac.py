@@ -21,15 +21,6 @@ class Fraction:
                 return False
         def compare_to(self, other):
                 return self.int() - other.int()
-        def to_mixed_number(self):
-                coeff = 0
-                copy = self.num
-                while copy > self.denom:
-                        copy -= self.denom
-                        coeff += 1
-                if coeff == 0:
-                        return MixedNumber(0, self.num, self.denom)
-                return MixedNumber(coeff, self.num, self.denom)
         def __lt__(self, other):
                 if self.__float__() < other.__float__():
                         return True
@@ -50,3 +41,25 @@ class Fraction:
                 if self.__float__() >= other.__float__():
                         return True
                 return False
+        def __add__(a, b):
+                com_denom = a.denom * b.denom
+                a_num = a.num * b.denom
+                b_num = b.num * a.denom
+                return Fraction(a_num + b_num, com_denom)
+        def __sub__(a, b):
+                com_denom = a.denom * b.denom
+                a_num = a.num * b.denom
+                b_num = b.num * a.denom
+                return Fraction(a_num - b_num, com_denom)
+        def __mul__(a, b):
+                return Fraction(a.num * b.num, a.denom * b.denom)
+        def __truediv__(a, b):
+                return Fraction(a.num * b.denom, a.denom * b.num)
+        def __iadd__(a, b):
+                return Fraction.__add__(a, b)
+        def __isub__(a, b):
+                return Fraction.__sub__(a, b)
+        def __imul__(a, b):
+                return Fraction.__mul__(a, b)
+        def __itruediv__(a, b):
+                return Fraction.__truediv__(a, b)

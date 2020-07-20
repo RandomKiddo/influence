@@ -7,7 +7,7 @@ class Printer:
 			print(item, end = ' ')
 	def print_dictionary(this_dictionary):
 		for key in this_dictionary.keys():
-			print(f'{key} : {this_dictionary[key]')
+			print(f'{key} : {this_dictionary[key]}')
 	def print_all(ender, *items):
 		if ender == False:
 			for item in items:
