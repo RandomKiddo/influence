@@ -32,4 +32,5 @@ setup(
     'Programming Language :: Python :: 3',      #Specify which pyhton versions that you want to support
     'Programming Language :: Python :: 3.8',
   ],
+  setup_requires=['wheel']
 )
