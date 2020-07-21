@@ -43,7 +43,7 @@ class Array2D(Array):
                     return True
         return False
 
-    def find(self, item):
+    def index(self, item):
         r_index = 0
         c_index = 0
         for i in self.__arr:
@@ -54,5 +54,7 @@ class Array2D(Array):
                 c_index += 1
             r_index += 1
         return [-1]
-    
+
+    def __len__(self):
+        return len(self.__arr)
     

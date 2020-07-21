@@ -47,13 +47,16 @@ class Array:
                 return True
         return False
 
-    def find(self, item):
+    def index(self, item):
         index = 0
         for i in self.__arr:
             if i == item:
                 return index
             index += 1
         return -1
+
+    def __len__(self):
+        return len(self.__arr)
     
 '''
 class TestArr(unittest.TestCase):
