@@ -24,4 +24,4 @@ class Subtract:
 			tracker += 1
 		return removed
 
-print(Subtract.subtract("hello", "hel"))
+#print(Subtract.subtract("hello", "hel"))

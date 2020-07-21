@@ -1,2 +1,2 @@
-from .aslist import AsList
-from .subtract import Subtract
+import aslist
+import subtract

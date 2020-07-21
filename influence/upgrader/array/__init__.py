@@ -1,2 +1,2 @@
-from .arrays import Array
-from .multiarray import Array2D
+import arrays
+import multiarray

@@ -1,5 +1,7 @@
-from .const import MathConstants
-from .frac import Fraction
-from .mixednum import MixedNumber
-from .stats import Stats
-from .cos import Combinatorics
+import const
+import frac
+import mixednum
+import stats
+import cos
+import grapher
+import agrapher

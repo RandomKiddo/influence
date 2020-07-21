@@ -1,2 +1,3 @@
 #from __future__ import absolute_import
-import printer
+import upgrader
+import extender

@@ -36,4 +36,4 @@ class AsList:
 		words.append(temp_str)
 		return words
 
-print(AsList.word_list_with_spaces('hello world'))
+#print(AsList.word_list_with_spaces('hello world'))
