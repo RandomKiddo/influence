@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup
 
 md = []
 with open('/Users/SchoolOfficial/Desktop/influence/README.rst', 'r') as f:
