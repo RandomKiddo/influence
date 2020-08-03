@@ -116,6 +116,11 @@ l.index(item)
 #returns [-1] otherwise
 l.__len__() / len(l)
 #returns the length of l
+l.__str__() / str(l)
+#returns l as a str
+l.__delitem__(key) / del l[key]
+#deletes row key from l
+#raises IndexError if key out of bounds
 ```
 
 ###### RaggedList Class
@@ -467,6 +472,8 @@ Methods:
 ```py
 arr[index]
 #gets the value at index
+arr[start:stop:step]
+#returns a list from an array from a slice of start, stop, and step
 #raises IndexError if index out of bounds
 arr[index] = item
 #sets the value at index to item
@@ -486,6 +493,11 @@ arr.__len__() / len(arr)
 #returns the length of arr
 not arr
 #returns True if arr has a capacity of 0
+arr.__str__() / str(arr)
+#returns arr as a str
+arr1 + arr2
+arr1 += arr2
+#adds the arrays together
 ```
 
 ###### Array2D Class
@@ -522,6 +534,60 @@ arr.index(item)
 #returns [-1] otherwise
 arr.__len__() / len(arr)
 #returns length of arr
+```
+
+##### String
+
+Package that extends on strings in python
+
+###### StringBuffer Class
+
+Makes strings mutable, like in java
+
+Importing:
+```py
+from influence.upgrader.string import stringbuffer
+#or
+from influence.upgrader.string.stringbuffer import StringBuffer
+```
+
+Initializing:
+```py
+s = StringBuffer(str='')
+#initializes a string buffer to str, empty if none entered
+```
+
+Methods:
+```py
+s.__len__() / len(s)
+#returns the length of s
+obj in s
+#returns true if obj is in s, false otherwise
+s.__iter__() / iter(s)
+#returns an iterator for s
+s.__next__() / next(s)
+#gets next letter in s
+s.__str__() / str(s)
+#gets s as a normal string
+s[index]
+#gets letter at index
+s[start:stop:step]
+#gets letters starting at start, up to but discluding stop, incrementing by step
+s[index] = item
+#sets letter at index to item
+s.append(append)
+#appends append to s
+s.index(obj)
+#returns the index of obj in s
+s.insert(index, obj)
+#inserts obj at index
+s.replace(start, stop, obj)
+#replaces the chars from stop to stop (discluding stop) with obj
+del s[index]
+#deletes the char at index
+s1 + s2
+s1 += s2
+#adds stringbuffers together
 ```
 
 # License
