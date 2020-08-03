@@ -20,6 +20,9 @@ class Array:
         return self.__arr[index]
 
     def __getitem__(self, key):
+        if isinstance(self, slice):
+            start, stop, step = key.indices(len(self))
+            return self.__arr[start:stop:step]
         if key > self.capacity - 1:
             raise IndexError
         return self.__arr[key]
@@ -50,6 +53,7 @@ class Array:
         print(printable)
 
     def contains(self, item):
+        warnings.warn("contains is deprecated, item in instance notation preferred", DeprecationWarning)
         for i in self.__arr:
             if i == item:
                 return True
@@ -82,6 +86,28 @@ class Array:
         if self.__itervalue == len(self.__arr):
             raise StopIteration
         return self.__arr[self.__itervalue]
+
+    def __str__(self): return ''.join([item + '\n' for item in self.__arr])
+
+    def __add__(one, two):
+        arr = Array(one.capacity + two.capacity)
+        for i in one:
+            arr[i] = i
+        for j in two:
+            arr[j + one.capacity] = j
+        return arr
+
+    def __iadd__(self, two):
+        self.capacity += two.capacity
+        self.__arr += two.__arr
+'''
+add to arrays and list
+__delitem__ (list)
+__str__
+__getitem__ with slice
+__add__
+__iadd__
+'''
 '''
 class TestArr(unittest.TestCase):
 
