@@ -72,3 +72,22 @@ class List2D:
                 return [-1]
         def __len__(self):
                 return len(self.__lists)
+        def __str__(self):
+                string = ''
+                for i in self.__lists:
+                        for j in i:
+                                string += j + ' '
+                        string += '\n'
+                return string
+        def __delitem__(self, key):
+                if key > self.rows - 1:
+                        raise IndexError
+                del self.__lists[key]
+'''
+add to arrays and list
+__delitem__ (list)
+__str__
+__getitem__ with slice
+__add__
+__iadd__
+'''
