@@ -1,0 +1,23 @@
+Array2D Class:
+
+	Deprecated:
+		
+		a.set(r_index, c_index, item)
+		a.get(r_index, c_index)
+
+	Replaced By:
+		
+		a[r_index][c_index] = item
+		a[r_index][c_index]
+
+List2D Class:
+
+	Deprecated:
+		
+		a.set(r_index, c_index, item)
+		a.get(r_index, c_index)
+
+	Replaced By:
+		
+		a[r_index][c_index] = item
+		a[r_index][c_index]
