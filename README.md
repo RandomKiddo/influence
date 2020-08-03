@@ -50,6 +50,28 @@ Printer.print_all(ender, *items)
 #else all items are printed on the same line
 ```
 
+##### Cin
+
+Cin (common input), has one module, input, that handles input specifically
+
+Importing:
+```py
+from influence.extender.cin import input
+#or 
+from influence.extender.cin.input import Input
+```
+
+###### Input Class
+
+Methods:
+```py
+value = Input.input(t, prompt=None)
+#stores input into value
+#prompt will be printed, defaults to None
+#raises ValueError if input does not match type t
+#raises TypeError if t not able to be casted from input
+```
+
 ##### List
 
 List extends python's built-in lists by adding multidimensional lists and other list extenders
@@ -67,18 +89,21 @@ from influence.extender.list.multilist import List2D
 
 Initializing:
 ```py
-l = List2D(rows, cols) 
+l = List2D(rows=1, cols=1) 
 #creates the list to have rows number of rows and cols number of cols
 ```
 
 Methods:
 ```py
-l.set(r_index, c_index, item)
+l[r_index][c_index] = item
 #sets value at r_index and c_index to item
-#returns true if able to set, false if index out of bounds
-l.get(r_index, c_index)
+#raises IndexError if index out of bounds
+l[r_index].append(item)
+#since this is a list, if you wish to append the list
+#you can do it this way instead of settings
+l[r_index][c_index]
 #returns value at r_index and c_index
-#returns None if index out of bounds
+#raises IndexError if index out of bounds
 l.print()
 #prints the list
 l.remove(r_index, c_index)
@@ -86,9 +111,11 @@ l.remove(r_index, c_index)
 #returns true if removed, false if index out of bounds
 item in l
 #returns true if item in l, false otherwise
-l.find(item)
+l.index(item)
 #returns indices of item if found in list
 #returns [-1] otherwise
+l.__len__() / len(l)
+#returns the length of l
 ```
 
 ###### RaggedList Class
@@ -124,9 +151,11 @@ r.get(r_index, c_index)
 #else returns None
 item in r
 #returns true if item is in r, else returns false
-r.find(item)
+r.index(item)
 #returns the indices of item if in r
 #else returns [-1]
+r.__len__() / len(r)
+#returns the length of r
 ```
 
 ###### AsList Class
@@ -436,21 +465,27 @@ arr = Array(capacity)
 
 Methods:
 ```py
-arr.get(index)
+arr[index]
 #gets the value at index
 #raises IndexError if index out of bounds
-arr.set(index, item)
+arr[index] = item
 #sets the value at index to item
 #raises IndexError if index out of bounds
 arr.__iter__() / iter(arr)
 #returns an iterator for the array
+iterator.__next__() / next(iterator)
+#gets the next element from the iterator
 arr.print()
 #prints the array
 item in arr
 #returns true if item is in arr, false otherwise
-arr.find(item)
+arr.index(item)
 #returns the index of item if in arr
 #returns -1 if not found
+arr.__len__() / len(arr)
+#returns the length of arr
+not arr
+#returns True if arr has a capacity of 0
 ```
 
 ###### Array2D Class
@@ -472,19 +507,21 @@ arr = Array2D(r, c)
 
 Methods:
 ```py
-arr.get(r_index, c_index)
+arr[r_index][c_index]
 #returns the value at r_index and c_index
 #raises IndexError if index out of bounds
-arr.set(r_index, c_index, item)
+arr[r_index][c_index] = item
 #sets value at r_index and c_index to item
 #raises IndexError if index out of bounds
 arr.print()
 #prints the 2D array
 item in arr
 #returns true if item is in arr, false otherwise
-arr.find(item)
+arr.index(item)
 #returns the indices of item in arr, if found
 #returns [-1] otherwise
+arr.__len__() / len(arr)
+#returns length of arr
 ```
 
 # License
