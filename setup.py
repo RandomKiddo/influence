@@ -1,7 +1,7 @@
 from setuptools import setup
 
 md = []
-with open('/Users/SchoolOfficial/Desktop/influence/README.md', 'r') as f:
+with open('/Users/SchoolOfficial/Desktop/influence/README.rst', 'r') as f:
     for line in f:
         md.append(str(line))
 ld = ''
