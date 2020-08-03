@@ -1,0 +1,8 @@
+ADDED STRINGBUFFER CLASS
+
+Crucial Method Changes To:
+
+	Array
+	List2D
+
+MAJOR CHANGES TO PACKAGE LAYOUT
