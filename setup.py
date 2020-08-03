@@ -23,14 +23,14 @@ setup(
         'influence.extender.string',
         'influence.extender.cin',
   ],
-  version = '1.0a1',      # Start with a small number and increase it with every change you make
+  version = '1.1a1',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'A utility package influenced by java, coded in python',   # Give a short description about your library
   long_description = ld,
   author = 'Neil',                   # Type in your name
   author_email = 'nghugare2@outlook.com',      # Type in your E-Mail
   url = 'https://github.com/RandomKiddo/influence',   # Provide either the link to your github or to your website
-  download_url = 'https://github.com/RandomKiddo/influence/archive/v1.0a1.tar.gz',    # I explain this later on
+  download_url = 'https://github.com/RandomKiddo/influence/archive/v_11a1.tar.gz',    # I explain this later on
   keywords = ['PYTHON', 'EXTENDER', 'UPGRADER'],   # Keywords that define your package best
   #install_requires=[            # I get to this in a second
           #'numpy',
