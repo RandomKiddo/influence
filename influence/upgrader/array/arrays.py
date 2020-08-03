@@ -1,4 +1,5 @@
 #import unittest
+import warnings
 
 class Array:
 
@@ -13,16 +14,29 @@ class Array:
         return l
 
     def get(self, index):
+        warnings.warn("get is deprecated, square bracket notation preferred", DeprecationWarning)
         if index > self.capacity - 1:
             raise IndexError
         return self.__arr[index]
 
+    def __getitem__(self, key):
+        if key > self.capacity - 1:
+            raise IndexError
+        return self.__arr[key]
+
     def set(self, index, item):
+        warnings.warn("set is deprecated, square bracket notation preferred", DeprecationWarning)
         if index > self.capacity - 1:
             raise IndexError
         self.__arr[index] = item
 
+    def __setitem__(self, key, item):
+        if key > self.capacity - 1:
+            raise IndexError
+        self.__arr[key] = item
+
     def __iter__(self):
+        self.__itervalue = -1
         return iter(self.__arr)
 
     def print(self):
@@ -47,14 +61,27 @@ class Array:
                 return True
         return False
 
-    def find(self, item):
+    def index(self, item):
         index = 0
         for i in self.__arr:
             if i == item:
                 return index
             index += 1
         return -1
-    
+
+    def __len__(self):
+        return len(self.__arr)
+
+    def __not__(obj):
+        if obj.capacity == 0:
+            return False
+        return True
+
+    def __next__(self):
+        self.__itervalue += 1
+        if self.__itervalue == len(self.__arr):
+            raise StopIteration
+        return self.__arr[self.__itervalue]
 '''
 class TestArr(unittest.TestCase):
 
