@@ -12,8 +12,6 @@ setup(
   name = 'influence',         # How you named your package folder (MyLib)
   packages = [
         'influence',
-        'influence.cin',
-        'influence.cout',
         'influence.math',
         'influence.list',
         'influence.string',
