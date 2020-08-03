@@ -1,0 +1,9 @@
+Array Class:
+
+	Deprecated Methods:
+		arr.get(index)
+		arr.set(index, item)
+
+	Replaced By:
+		arr[index]
+		arr[index] = item
