@@ -6,9 +6,6 @@ With influence you can extend python with things like two-dimensional lists, fra
 
 The influence python library was created with one sole purpose, helping you do things that can't be done in standard python with ease
 
-  - Extender Library: Sub-package of influence that extends things that are already in python, such as lists, strings, and doing math
-  - Upgrader Library: Sub-package of influence that adds things to python that it doesn't have already, like arrays
-
 # Usage
 
 Below is how to install and use the influence library in your own programs!
@@ -23,19 +20,15 @@ $ python3 -m pip install -U influence
 
 The influence package has two package dependencies, numpy and matplotlib (used for grapher and agrapher classes)
 
-### Extender Library
-
-The influence subpackage that extends python's built-in features
-
 ##### Cout
 
-Cout (common output) has only one module, printer, that helps print tuples, lists, dicts, etc. nicely
+Cout (common output) has only one class, printer, that helps print tuples, lists, dicts, etc. nicely
 
 Importing:
 ```py
-from influence.extender.cout import printer
+from influence import cout
 #or
-from influence.extender.cout.printer import Printer
+from influence.cout import Printer
 ```
 
 ###### Printer Class
@@ -52,13 +45,13 @@ Printer.print_all(ender, *items)
 
 ##### Cin
 
-Cin (common input), has one module, input, that handles input specifically
+Cin (common input), has one class, input, that handles input specifically
 
 Importing:
 ```py
-from influence.extender.cin import input
+from influence import cin
 #or 
-from influence.extender.cin.input import Input
+from influence.cin import Input
 ```
 
 ###### Input Class
@@ -82,9 +75,9 @@ Creates a 2D list of a square size
 
 Importing:
 ```py
-from influence.extender.list import multilist
+from influence.list import multilist
 #or
-from influence.extender.list.multilist import List2D
+from influence.list.multilist import List2D
 ```
 
 Initializing:
@@ -116,6 +109,11 @@ l.index(item)
 #returns [-1] otherwise
 l.__len__() / len(l)
 #returns the length of l
+l.__str__() / str(l)
+#returns l as a str
+l.__delitem__(key) / del l[key]
+#deletes row key from l
+#raises IndexError if key out of bounds
 ```
 
 ###### RaggedList Class
@@ -124,9 +122,9 @@ Creates a 2D list, but doesn't need to be of n x n size, inherits from List2D, a
 
 Importing:
 ```py
-from influence.extender.list import ragged
+from influence.list import ragged
 #or
-from influence.extender.list.ragged import RaggedList
+from influence.list.ragged import RaggedList
 ```
 
 Initializing:
@@ -164,9 +162,9 @@ Used to turn strings into lists, duplicate class found in string subpackage
 
 Importing:
 ```py
-from influence.extender.list import aslist
+from influence.list import aslist
 #or
-from influence.extneder.list.aslist import AsList
+from influence.list.aslist import AsList
 ```
 
 Methods:
@@ -191,9 +189,9 @@ Used to turn strings into lists, duplicate class found in list subpackage
 
 Importing:
 ```py
-from influence.extender.string import aslist
+from influence.string import aslist
 #or
-from influence.extneder.string.aslist import AsList
+from influence.string.aslist import AsList
 ```
 
 Methods:
@@ -214,9 +212,9 @@ Allows for subtracting of strings, but does not change the input string, instead
 
 Importing:
 ```py
-from influence.extender.string import subtract
+from influence.string import subtract
 #or
-from influence.extender.string.subtract import Subtract
+from influence.string.subtract import Subtract
 ```
 
 Methods:
@@ -239,9 +237,9 @@ Gives the user access to constants in math
 
 Importing:
 ```py
-from influence.extender.math import const
+from influence.math import const
 #or
-from influence.extender.math.const import MathConstants
+from influence.math.const import MathConstants
 ```
 
 Fields:
@@ -258,9 +256,9 @@ Allows for statistics with int or float datasets
 
 Importing:
 ```py
-from influence.extender.math import stats
+from influence.math import stats
 #or
-from influence.extender.math.stats import Stats
+from influence.math.stats import Stats
 ```
 
 Methods:
@@ -289,9 +287,9 @@ Does permutations and combinations equations, inherits from Stats, and therefore
 
 Importing:
 ```py
-from influence.extender.math import cos
+from influence.math import cos
 #or
-from influence.extender.math.cos import Combinatorics
+from influence.math.cos import Combinatorics
 ```
 
 Methods:
@@ -310,9 +308,9 @@ Represents a fraction
 
 Importing:
 ```py
-from influence.extender.math import frac
+from influence.math import frac
 #or
-from influence.extender.math.frac import Fraction
+from influence.math.frac import Fraction
 ```
 
 Initializing:
@@ -353,9 +351,9 @@ Represents a mixed number
 
 Importing:
 ```py
-from influence.extender.math import mixednum
+from influence.math import mixednum
 #or
-from influence.extender.math.mixednum import MixedNumber
+from influence.math.mixednum import MixedNumber
 ```
 
 Initializing:
@@ -397,9 +395,9 @@ Allows for graphing equations
 
 Importing:
 ```py
-from influence.extender.math.grapher.grapher import Equation
-from influence.extender.math.grapher.grapher import GraphingError
-from influence.extender.math.grapher.grapher import Grapher
+from influence.math.grapher import Equation
+from influence.math.grapher import GraphingError
+from influence.math.grapher import Grapher
 ```
 
 Equation Class:
@@ -432,14 +430,12 @@ Asynchronous graphing is currently a WIP but are still able to be used
 
 Importing:
 ```py
-from influence.extender.math.agrapher.asyncgrapher import Equation
-from influence.extender.math.agrapher.asyncgrapher import GraphingError
-from influence.extender.math.agrapher.asyncgrapher import Grapher
+from influence.math.asyncgrapher import Equation
+from influence.math.asyncgrapher import GraphingError
+from influence.math.asyncgrapher import Grapher
 ```
 
 Agrapher works in the same exact way except Grapher.graph(eq, timetoclose=None), can have a given timeout
-
-### Upgrader Library
 
 ##### Array
 
@@ -452,9 +448,9 @@ Makes an array
 
 Importing:
 ```py
-from influence.upgrader.array import arrays
+from influence.array import arrays
 #or
-from influence.upgrader.array.arrays import Array
+from influence.array.arrays import Array
 ```
 
 Initializing:
@@ -467,6 +463,8 @@ Methods:
 ```py
 arr[index]
 #gets the value at index
+arr[start:stop:step]
+#returns a list from an array from a slice of start, stop, and step
 #raises IndexError if index out of bounds
 arr[index] = item
 #sets the value at index to item
@@ -486,6 +484,11 @@ arr.__len__() / len(arr)
 #returns the length of arr
 not arr
 #returns True if arr has a capacity of 0
+arr.__str__() / str(arr)
+#returns arr as a str
+arr1 + arr2
+arr1 += arr2
+#adds the arrays together
 ```
 
 ###### Array2D Class
@@ -494,9 +497,9 @@ Creates a 2D Array, inherits from Array, and therefore has a dependency to influ
 
 Importing:
 ```py
-from influence.upgrader.array import multiarray
+from influence.array import multiarray
 #or
-from influence.upgrader.array.multiarray import Array2D
+from influence.array.multiarray import Array2D
 ```
 
 Initializing:
@@ -522,6 +525,60 @@ arr.index(item)
 #returns [-1] otherwise
 arr.__len__() / len(arr)
 #returns length of arr
+```
+
+##### String
+
+Package that extends on strings in python
+
+###### StringBuffer Class
+
+Makes strings mutable, like in java
+
+Importing:
+```py
+from influence.string import stringbuffer
+#or
+from influence.string.stringbuffer import StringBuffer
+```
+
+Initializing:
+```py
+s = StringBuffer(str='')
+#initializes a string buffer to str, empty if none entered
+```
+
+Methods:
+```py
+s.__len__() / len(s)
+#returns the length of s
+obj in s
+#returns true if obj is in s, false otherwise
+s.__iter__() / iter(s)
+#returns an iterator for s
+s.__next__() / next(s)
+#gets next letter in s
+s.__str__() / str(s)
+#gets s as a normal string
+s[index]
+#gets letter at index
+s[start:stop:step]
+#gets letters starting at start, up to but discluding stop, incrementing by step
+s[index] = item
+#sets letter at index to item
+s.append(append)
+#appends append to s
+s.index(obj)
+#returns the index of obj in s
+s.insert(index, obj)
+#inserts obj at index
+s.replace(start, stop, obj)
+#replaces the chars from stop to stop (discluding stop) with obj
+del s[index]
+#deletes the char at index
+s1 + s2
+s1 += s2
+#adds stringbuffers together
 ```
 
 # License
