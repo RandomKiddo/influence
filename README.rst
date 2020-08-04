@@ -84,12 +84,6 @@ Methods:
     #raises ValueError if input does not match type t
     #raises TypeError if t not able to be casted from input
 
-List
-''''
-
-List extends python's built-in lists by adding multidimensional lists
-and other list extenders
-
 List2D Class
             
 
@@ -214,11 +208,6 @@ Methods:
     AsList.word_list_with_spaces(string)
     #same as AsList.word_list(string) except spaces are part of the list
 
-String
-''''''
-
-Allows for a couple new things to be done with strings
-
 AsList Class
             
 
@@ -272,9 +261,6 @@ Methods:
     #removes all instances of remove from initial
     #returns a new string
     #remove can be multiple letters, but must be a string
-
-Math
-''''
 
 Const Class
 ===========
@@ -509,17 +495,12 @@ Importing:
 Agrapher works in the same exact way except Grapher.graph(eq,
 timetoclose=None), can have a given timeout
 
-Array
-'''''
-
-Creates an array An array is like a list, except it has a definite,
-unchangeable size, but elements can be changed inside of it (unlike a
-tuple)
-
 Array Class
            
 
-Makes an array
+Makes an array. An array is like a list, except it has a definite,
+unchangeable size, but elements can be changed inside of it (unlike a
+tuple)
 
 Importing:
 
@@ -610,11 +591,6 @@ Methods:
     arr.__len__() / len(arr)
     #returns length of arr
 
-String
-''''''
-
-Package that extends on strings in python
-
 StringBuffer Class
                   
 
@@ -668,6 +644,48 @@ Methods:
     s1 + s2
     s1 += s2
     #adds stringbuffers together
+
+Stack Class
+           
+
+Represents a stack
+
+Importing:
+
+.. code:: py
+
+    from influence.list import stack
+    #or
+    from influence.list.stack import Stack
+
+Initializing:
+
+.. code:: py
+
+    s = Stack()
+
+Methods:
+
+.. code:: py
+
+    s.push(obj)
+    #puts an item to the top of the stack
+    s.pop()
+    #removes the top item in the stack
+    #raises stack.EmptyStackError if stack is empty
+    s.peek()
+    #gets the top item in the stack without removing it
+    #returns None if stack is empty
+    s.empty()
+    #returns True if s is empty
+    obj in s
+    #returns True if obj is in s, False otherwise
+    s.index(obj)
+    #returns the index of obj, -1 if not found
+    s.__len__() / len(s)
+    #returns the length of s
+    s.__str__() / str(s)
+    #returns s as a str
 
 License
 =======

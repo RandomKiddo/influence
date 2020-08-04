@@ -6,3 +6,5 @@ Crucial Method Changes To:
 	List2D
 
 MAJOR CHANGES TO PACKAGE LAYOUT
+
+STACKS ADDED
