@@ -65,10 +65,6 @@ value = Input.input(t, prompt=None)
 #raises TypeError if t not able to be casted from input
 ```
 
-##### List
-
-List extends python's built-in lists by adding multidimensional lists and other list extenders
-
 ###### List2D Class
 
 Creates a 2D list of a square size
@@ -179,10 +175,6 @@ AsList.word_list_with_spaces(string)
 #same as AsList.word_list(string) except spaces are part of the list
 ```
 
-##### String
-
-Allows for a couple new things to be done with strings
-
 ###### AsList Class
 
 Used to turn strings into lists, duplicate class found in list subpackage
@@ -228,8 +220,6 @@ Subtract.subtract_all(initial, remove)
 #returns a new string
 #remove can be multiple letters, but must be a string
 ```
-
-##### Math
 
 #Const Class
 
@@ -437,14 +427,9 @@ from influence.math.asyncgrapher import Grapher
 
 Agrapher works in the same exact way except Grapher.graph(eq, timetoclose=None), can have a given timeout
 
-##### Array
-
-Creates an array
-An array is like a list, except it has a definite, unchangeable size, but elements can be changed inside of it (unlike a tuple)
-
 ###### Array Class
 
-Makes an array
+Makes an array. An array is like a list, except it has a definite, unchangeable size, but elements can be changed inside of it (unlike a tuple)
 
 Importing:
 ```py
@@ -527,10 +512,6 @@ arr.__len__() / len(arr)
 #returns length of arr
 ```
 
-##### String
-
-Package that extends on strings in python
-
 ###### StringBuffer Class
 
 Makes strings mutable, like in java
@@ -579,6 +560,208 @@ del s[index]
 s1 + s2
 s1 += s2
 #adds stringbuffers together
+```
+
+###### Stack Class
+
+Represents a stack of items, top being the newest, and bottom being the oldest
+
+Importing:
+```py
+from influence.list import stack
+#or
+from influence.list.stack import Stack
+```
+
+Initializing:
+```py
+s = Stack()
+#creates an empty stack
+```
+
+Methods:
+```py
+s.push(obj)
+#puts an item to the top of the stack
+s.pop()
+#removes the top item in the stack
+#raises stack.EmptyStackError if stack is empty
+s.peek()
+#gets the top item in the stack without removing it
+#returns None if stack is empty
+s.empty()
+#returns True if s is empty
+obj in s
+#returns True if obj is in s, False otherwise
+s.index(obj)
+#returns the index of obj, -1 if not found
+s.__len__() / len(s)
+#returns the length of s
+s.__str__() / str(s)
+#returns s as a str
+```
+
+###### InsertableDict Class
+
+A dict which can insert items at a certain index
+
+Importing:
+```py
+from influence.dict import idict
+#or
+from influence.dict.idict import InsertableDict
+```
+
+Initializing:
+```py
+i = InsertableDict()
+#creates an empty insertable dict
+```
+
+Methods:
+```py
+i[key]
+#gets the value from i of key key
+i[key] = item
+#sets the value at key to item
+#or creates a new key and value if key not in i
+i.__len__() / len(i)
+#gets the length of i
+i.get(key)
+#like i[key] but returns None if key is not in i
+i.append(key, item)
+#appends key and item to the end of the i
+i.keys()
+#returns the keys of i
+i.values()
+#returns the values of i
+i.__str__() / str(i)
+#returns i as a str
+i.remove(key)
+#removes the key and value of key
+i.pop()
+#removes the last element in i
+i.__iter__() / iter(i)
+#returns an iter object for i
+i.__next__() / next(i)
+#returns the next element in i
+i.insert(index, key, value)
+#inserts key and value at index (index starts at 0)
+```
+
+###### TreeSet Class
+
+A normal set (where you can't have duplicate items), except all items are automatically sorted upon adding
+
+Importing:
+```py
+from influence.set import treeset
+#or
+from influence.set.treeset import TreeSet
+```
+
+Initializing:
+```py
+ts = TreeSet(t)
+#creates a treeset that takes in values of type t
+```
+
+Methods:
+```py
+ts.add(item)
+#adds item to ts and sorts the set
+#raises ValueError if item is not of instance t
+#returns True if added, False if item already in set
+obj in ts
+#returns True if obj is in ts, False otherwise
+ts.remove(item)
+#removes item from ts
+#raises an error if item not in ts
+ts.discard(item)
+#removes item from ts if found
+#does not raise an error if not found
+ts.__len__() / len(ts)
+#returns the length of ts
+ts.__str__() / str(ts)
+#returns ts as a str
+ts.__iter__() / iter(ts)
+#returns an iterator for ts
+ts.__next__() / next(ts)
+#returns the next element in ts
+ts.pop()
+#removes the last element in ts
+```
+
+###### TreeMap Class
+
+A normal dictionary, except items are automatically sorted by key from least to greatest
+
+Importing:
+```py
+from influence.dict import treemap
+#or
+from influence.dict.treemap import TreeMap
+```
+
+Initializing:
+```py
+tm = TreeMap()
+#initializes an empty treemap
+```
+
+Methods:
+```py
+tm.add(key, value)
+#adds key and value to tm and sorts the dict
+obj in tm
+#returns True if obj is in tm.keys() or tm.values(), False otherwise
+tm.keys()
+#returns the keys in tm
+tm.values()
+#returns the values in tm
+tm.__str__() / str(tm)
+#returns tm as a str
+tm.remove(key)
+#removes the key and value of key from tm
+tm.pop()
+#removes the last element key and value from tm
+tm.__len__() / len(tm)
+#returns the length of tm
+tm.__iter__() / iter(tm)
+#returns an iterator for tm
+tm.__next__() / next(tm)
+#returns the next element in tm
+```
+
+###### StemLeaf Class
+
+Creates a stem and leaf plot
+
+Importing:
+```py
+from influence.math import stemandleaf
+#or
+from influence.math.stemandleaf import StemLeaf
+```
+
+Initializing:
+```py
+sl = StemLeaf()
+#initializes an empty stem and leaf plot
+```
+
+Methods:
+```py
+sl.plot(stem, leaf)
+#adds the stem and leaf to plot
+sl.remove(stem, leaf)
+#removes the leaf from the given stem if found
+#raises stemandleaf.NoStemError if stem not found
+#raises stemandleaf.NoLeafError if leaf not found in stem
+sl.__str__() / str(sl)
+#returns sl as a str
+sl.empty()
+#returns True if sl is empty, False otherwise
 ```
 
 # License
