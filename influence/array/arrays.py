@@ -87,7 +87,20 @@ class Array:
             raise StopIteration
         return self.__arr[self.__itervalue]
 
-    def __str__(self): return ''.join([item + '\n' for item in self.__arr])
+    def __str__(self):
+        s = '['
+        for i in range(len(self.__arr)):
+            if self.__arr[i] != None:
+                if i == len(self.__arr) - 1:
+                    s += self.__arr[i]
+                else:
+                    s += self.__arr[i] + ", "
+            else:
+                if i == len(self.__arr) - 1:
+                    s += 'None'
+                else:
+                    s += 'None, '
+        return s + ']'
 
     def __add__(one, two):
         arr = Array(one.capacity + two.capacity)
@@ -107,7 +120,6 @@ __str__
 __getitem__ with slice
 __add__
 __iadd__
-'''
 '''
 class TestArr(unittest.TestCase):
 
@@ -142,4 +154,3 @@ class TestArr(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-'''
