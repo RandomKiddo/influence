@@ -53,9 +53,6 @@ Methods:
     Printer.print_list(list) #prints a list nicely
     Printer.print_tuple(tuple) #prints a tuple nicely
     Printer.print_dictionary(dict) #prints a dict nicely
-    Printer.print_all(ender, *items) 
-    #prints all of items, if ender is False, prints each item on new line
-    #else all items are printed on the same line
 
 Cin
 '''
@@ -549,6 +546,8 @@ Methods:
     arr1 + arr2
     arr1 += arr2
     #adds the arrays together
+    arr.__reversed__() / reversed(arr)
+    #returns the array reversed
 
 Array2D Class
              
@@ -869,6 +868,44 @@ Methods:
     #returns sl as a str
     sl.empty()
     #returns True if sl is empty, False otherwise
+
+Database Class
+''''''''''''''
+
+Creates a large database
+
+Importing:
+
+.. code:: py
+
+    from influence.dict import database
+    #or
+    from influence.dict.database import Database
+
+Initializing:
+
+.. code:: py
+
+    d = Database(initial_capacity=1000)
+    #initializes a database with an initial capacity, default 1000
+
+Methods:
+
+.. code:: py
+
+    d.add(**kwargs)
+    #adds all kwargs to the database
+    #kwargs are added in one spot of the database
+    d.items()
+    #a generator for getting the items in the database
+    d.__len__() / len(d)
+    #gets the length of d
+    d[key]
+    #gets the item of key from d
+    d[key] = item
+    #sets the item at key to the new item
+    item in d
+    #returns if item is in d
 
 License
 =======
