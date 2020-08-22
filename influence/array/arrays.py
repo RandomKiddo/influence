@@ -87,7 +87,20 @@ class Array:
             raise StopIteration
         return self.__arr[self.__itervalue]
 
-    def __str__(self): return ''.join([item + '\n' for item in self.__arr])
+    def __str__(self):
+        s = '['
+        for i in range(len(self.__arr)):
+            if self.__arr[i] != None:
+                if i == len(self.__arr) - 1:
+                    s += f'{self.__arr[i]}'
+                else:
+                    s += f'{self.__arr[i]}, '
+            else:
+                if i == len(self.__arr) - 1:
+                    s += 'None'
+                else:
+                    s += 'None, '
+        return s + ']'
 
     def __add__(one, two):
         arr = Array(one.capacity + two.capacity)
@@ -100,6 +113,15 @@ class Array:
     def __iadd__(self, two):
         self.capacity += two.capacity
         self.__arr += two.__arr
+
+    def __reversed__(self):
+        a = Array(self.capacity)
+        index = 0
+        for i in self.__arr[::-1]:
+            a[index] = i
+            index += 1
+        return a
+
 '''
 add to arrays and list
 __delitem__ (list)
