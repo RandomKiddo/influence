@@ -1,3 +1,4 @@
+import warnings
 class Printer:
 	def print_list(this_list):
 		for item in this_list:
@@ -9,6 +10,7 @@ class Printer:
 		for key in this_dictionary.keys():
 			print(f'{key} : {this_dictionary[key]}')
 	def print_all(ender, *items):
+                warnings.warn('print_all is deprecated, to be removed', DeprecationWarning)
 		if ender == False:
 			for item in items:
 				print(item)
